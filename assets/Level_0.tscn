@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxxbkbyuvmvp3"]
+
+[ext_resource type="Texture2D" uid="uid://7ie274i1s7g6" path="res://assets/background1.png" id="1_1rvvw"]
+[ext_resource type="Texture2D" uid="uid://gijbb2iyakyd" path="res://assets/background2.png" id="2_2isg6"]
+[ext_resource type="Texture2D" uid="uid://d23nla0iy2h1d" path="res://assets/background3.png" id="3_bbavo"]
+[ext_resource type="Texture2D" uid="uid://jwbclwpadpw0" path="res://assets/background4b.png" id="4_m30jd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background1" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_1rvvw")
+
+[node name="Background2" type="Sprite2D" parent="Background1"]
+texture = ExtResource("2_2isg6")
+
+[node name="Background3" type="Sprite2D" parent="Background1"]
+texture = ExtResource("3_bbavo")
+
+[node name="Background4b" type="Sprite2D" parent="Background1"]
+texture = ExtResource("4_m30jd")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 160, 0, 160, 16, 0, 16)
