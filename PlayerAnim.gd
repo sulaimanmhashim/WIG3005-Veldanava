@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.get_axis("ui_left", "ui_right"):
 		play("run")
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():

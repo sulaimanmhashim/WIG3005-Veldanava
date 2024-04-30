@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="WIG3005_Platformer"
-run/main_scene="res://player.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+run/main_scene="res://Level_0.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=960
 window/size/viewport_height=480
 window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="WIG3005_Platformer"
 
 [input]
 
