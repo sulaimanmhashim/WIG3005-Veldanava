@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jwbclwpadpw0"
-path="res://.godot/imported/background4b.png-a3522d3aeba2add5daef75765f037484.ctex"
+uid="uid://cpnyr2713mikx"
+path="res://.godot/imported/_Run.png-7653e293a08fa88db635c82c31ee1f6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background4b.png"
-dest_files=["res://.godot/imported/background4b.png-a3522d3aeba2add5daef75765f037484.ctex"]
+source_file="res://assets/Drawables/Player/_Run.png"
+dest_files=["res://.godot/imported/_Run.png-7653e293a08fa88db635c82c31ee1f6b.ctex"]
 
 [params]
 

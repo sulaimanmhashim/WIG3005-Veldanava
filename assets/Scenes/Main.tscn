@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxxbkbyuvmvp3"]
 
-[ext_resource type="Texture2D" uid="uid://7ie274i1s7g6" path="res://assets/background1.png" id="1_1rvvw"]
-[ext_resource type="Texture2D" uid="uid://gijbb2iyakyd" path="res://assets/background2.png" id="2_2isg6"]
-[ext_resource type="Texture2D" uid="uid://d23nla0iy2h1d" path="res://assets/background3.png" id="3_bbavo"]
-[ext_resource type="Texture2D" uid="uid://jwbclwpadpw0" path="res://assets/background4b.png" id="4_m30jd"]
-[ext_resource type="TileSet" uid="uid://bbiiwn4wpapdf" path="res://assets/cave_level.tres" id="5_tslgp"]
+[ext_resource type="Texture2D" uid="uid://7ie274i1s7g6" path="res://assets/Drawables/background1.png" id="1_1rvvw"]
+[ext_resource type="Texture2D" uid="uid://gijbb2iyakyd" path="res://assets/Drawables/background2.png" id="2_2isg6"]
+[ext_resource type="Texture2D" uid="uid://d23nla0iy2h1d" path="res://assets/Drawables/background3.png" id="3_bbavo"]
+[ext_resource type="Texture2D" uid="uid://jwbclwpadpw0" path="res://assets/Drawables/background4b.png" id="4_m30jd"]
+[ext_resource type="TileSet" uid="uid://bbiiwn4wpapdf" path="res://assets/Animations/cave_level.tres" id="5_tslgp"]
 
 [node name="Node2D" type="Node2D"]
 

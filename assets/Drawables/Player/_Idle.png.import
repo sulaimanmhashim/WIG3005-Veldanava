@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qhohgli0peft"
-path="res://.godot/imported/background4a.png-1dedaf0b84d62024e440a985a2a31f5d.ctex"
+uid="uid://bafc70d8ikrvb"
+path="res://.godot/imported/_Idle.png-71de788340523f149ae3d2769d289702.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background4a.png"
-dest_files=["res://.godot/imported/background4a.png-1dedaf0b84d62024e440a985a2a31f5d.ctex"]
+source_file="res://assets/Drawables/Player/_Idle.png"
+dest_files=["res://.godot/imported/_Idle.png-71de788340523f149ae3d2769d289702.ctex"]
 
 [params]
 
