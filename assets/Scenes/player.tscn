@@ -9,18 +9,19 @@ height = 38.0
 
 [node name="Player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
 script = ExtResource("1_xv2vj")
 
-[node name="PlayerAnim" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="PlayerAnim" type="AnimatedSprite2D" parent="PlayerBody"]
 position = Vector2(5, -21)
 sprite_frames = ExtResource("2_762h8")
+animation = &"roll"
 autoplay = "default"
-frame_progress = 0.542001
+frame_progress = 0.648585
 script = ExtResource("3_yg68q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="PlayerCapsule" type="CollisionShape2D" parent="PlayerBody"]
 shape = SubResource("CapsuleShape2D_dyh7b")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="PlayerCam" type="Camera2D" parent="PlayerBody"]
 zoom = Vector2(1.25, 1.25)

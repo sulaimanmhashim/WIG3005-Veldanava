@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djjsg0jhwpcnl"
-path="res://.godot/imported/mainlev_build.png-9b13b1c4f627024a7f620c9d032cd99b.ctex"
+uid="uid://rwdd2f14sto"
+path="res://.godot/imported/_WallClimbNoMovement.png-a39ca623b8a271ba4a26042dca1c91f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Drawables/mainlev_build.png"
-dest_files=["res://.godot/imported/mainlev_build.png-9b13b1c4f627024a7f620c9d032cd99b.ctex"]
+source_file="res://assets/Drawables/Player/_WallClimbNoMovement.png"
+dest_files=["res://.godot/imported/_WallClimbNoMovement.png-a39ca623b8a271ba4a26042dca1c91f4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jwbclwpadpw0"
-path="res://.godot/imported/background4b.png-c0bdaa7380279a6c54aac28e6e0f1924.ctex"
+uid="uid://bkwx2e1yq2oay"
+path="res://.godot/imported/_AttackCombo2hit.png-cc1266dd89f7d21b4c69b8a818550a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Drawables/background4b.png"
-dest_files=["res://.godot/imported/background4b.png-c0bdaa7380279a6c54aac28e6e0f1924.ctex"]
+source_file="res://assets/Drawables/Player/_AttackCombo2hit.png"
+dest_files=["res://.godot/imported/_AttackCombo2hit.png-cc1266dd89f7d21b4c69b8a818550a07.ctex"]
 
 [params]
 

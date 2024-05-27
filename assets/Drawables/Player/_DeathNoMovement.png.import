@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y1i3jq75171o"
-path="res://.godot/imported/props1.png-1cedb42e491e05061638cb2f39674c4e.ctex"
+uid="uid://dmvcjiysiaols"
+path="res://.godot/imported/_DeathNoMovement.png-6ce7bd38ca2fa0f90f0808dc27cf69a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Drawables/props1.png"
-dest_files=["res://.godot/imported/props1.png-1cedb42e491e05061638cb2f39674c4e.ctex"]
+source_file="res://assets/Drawables/Player/_DeathNoMovement.png"
+dest_files=["res://.godot/imported/_DeathNoMovement.png-6ce7bd38ca2fa0f90f0808dc27cf69a1.ctex"]
 
 [params]
 
