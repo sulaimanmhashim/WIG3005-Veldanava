@@ -98,7 +98,11 @@ func _physics_process(delta):
 		if facing_right == true:
 			velocity.x = 1 * DASH_SPEED
 		else:
-			velocity.x = -1 * DASH_SPEED		
+			velocity.x = -1 * DASH_SPEED	
+			
+		if not is_on_floor():
+			velocity.y += gravity * delta	
+	
 	else:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
