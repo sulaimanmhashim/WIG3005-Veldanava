@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6pbbd1txrkj4"]
+[gd_scene load_steps=9 format=3 uid="uid://c6pbbd1txrkj4"]
 
 [ext_resource type="Script" path="res://assets/Scripts/PlayerControl.gd" id="1_xv2vj"]
 [ext_resource type="SpriteFrames" uid="uid://b3jphp1ryqpdw" path="res://assets/Animations/player_idle.tres" id="2_762h8"]
+[ext_resource type="Script" path="res://assets/Scripts/PlayerAnim.gd" id="3_yg68q"]
 [ext_resource type="Texture2D" uid="uid://8siq70p6t7pq" path="res://assets/Drawables/Menu/pausebutton.png" id="4_akbie"]
 [ext_resource type="Texture2D" uid="uid://coo65j4nwck0j" path="res://assets/Drawables/Menu/settings_50x50.png" id="5_85d1c"]
 [ext_resource type="Texture2D" uid="uid://bjdeq0gflbfj8" path="res://assets/Drawables/Menu/exit_50x50.png" id="6_mn41k"]
@@ -18,9 +19,10 @@ script = ExtResource("1_xv2vj")
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="PlayerBody"]
 position = Vector2(5, -21)
 sprite_frames = ExtResource("2_762h8")
-animation = &"jump"
+animation = &"roll"
 autoplay = "default"
-frame_progress = 0.0401144
+frame_progress = 0.648585
+script = ExtResource("3_yg68q")
 
 [node name="PlayerCapsule" type="CollisionShape2D" parent="PlayerBody"]
 shape = SubResource("CapsuleShape2D_dyh7b")

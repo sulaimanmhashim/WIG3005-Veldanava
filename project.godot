@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WIG3005_Platformer"
-run/main_scene="res://assets/Scenes/Main.tscn"
+run/main_scene="res://assets/ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

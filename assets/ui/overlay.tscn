@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd8qmvl8phl1g"]
+
+[ext_resource type="Texture2D" uid="uid://8siq70p6t7pq" path="res://assets/Drawables/Menu/pausebutton.png" id="2_48nhx"]
+[ext_resource type="Texture2D" uid="uid://coo65j4nwck0j" path="res://assets/Drawables/Menu/settings_50x50.png" id="3_txhqx"]
+[ext_resource type="Texture2D" uid="uid://bjdeq0gflbfj8" path="res://assets/Drawables/Menu/exit_50x50.png" id="4_wbwya"]
+
+[sub_resource type="GDScript" id="GDScript_jlssk"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var pauseButton=$AspectRatioContainer/Pause
+	var popup=pauseButton.get_popup()
+	popup.id_pressed.connect(file_menu)
+
+func file_menu(id):
+	if id==1:
+		get_tree().change_scene_to_file(\"res://assets/ui/main_menu.tscn\")
+"
+
+[node name="Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_jlssk")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999132
+anchor_bottom = 1.0
+offset_right = 0.000305176
+ratio = 2.0
+alignment_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Pause" type="MenuButton" parent="AspectRatioContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("2_48nhx")
+icon_alignment = 1
+expand_icon = true
+item_count = 2
+popup/item_0/text = "Settings"
+popup/item_0/icon = ExtResource("3_txhqx")
+popup/item_0/id = 0
+popup/item_1/text = "Back"
+popup/item_1/icon = ExtResource("4_wbwya")
+popup/item_1/id = 1
