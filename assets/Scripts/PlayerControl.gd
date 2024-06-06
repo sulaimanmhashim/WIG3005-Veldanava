@@ -16,6 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # use animatedsprite2d method like play() and stop() to control animation
 var playerAnim
 var facing_right = false
+var in_action = false
 
 # Variables for rolling state
 var is_rolling = false
@@ -37,7 +38,7 @@ func _physics_process(delta):
 	
 	var direction = Input.get_axis("ui_left","ui_right")
 		
-	if not is_rolling and not is_attacking and not is_dashing:
+	if not in_action:
 		if(Input.is_anything_pressed()==false):
 			playerAnim.play("default")
 		
@@ -51,18 +52,21 @@ func _physics_process(delta):
 			
 		# Handle Roll.
 		if Input.is_action_just_pressed("roll") and is_on_floor():
+			in_action = true
 			is_rolling = true
 			roll_timer = ROLL_DURATION
 			playerAnim.play("roll")
 			
 		# Handle Attack
 		if Input.is_action_just_pressed("attack"):
+			in_action = true
 			is_attacking = true
 			attack_timer = ATTACK_DURATION
 			playerAnim.play("attack")
 			
 		# Handle Dash Attack
 		if Input.is_action_just_pressed("dash_attack"):
+			in_action = true
 			is_dashing = true
 			dash_timer = DASH_DURATION
 			playerAnim.play("attack2")
@@ -72,10 +76,11 @@ func _physics_process(delta):
 		roll_timer -= delta
 		if roll_timer <= 0:
 			is_rolling = false
+			in_action = false
 			playerAnim.play("default")
 			
 
-		if facing_right == true:
+		if facing_right:
 			velocity.x = 1 * ROLL_SPEED
 		else:
 			velocity.x = -1 * ROLL_SPEED
@@ -84,6 +89,7 @@ func _physics_process(delta):
 		attack_timer -= delta;
 		if attack_timer <= 0:
 			is_attacking = false
+			in_action = false
 			playerAnim.play("default")
 		
 		if not is_on_floor():
@@ -93,9 +99,10 @@ func _physics_process(delta):
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
+			in_action = false
 			playerAnim.play("default")
 			
-		if facing_right == true:
+		if facing_right:
 			velocity.x = 1 * DASH_SPEED
 		else:
 			velocity.x = -1 * DASH_SPEED	
