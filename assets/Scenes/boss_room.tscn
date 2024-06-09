@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3 uid="uid://3nnggp5oj3fv"]
+
+[ext_resource type="Texture2D" uid="uid://7ie274i1s7g6" path="res://assets/Drawables/Environment/background1.png" id="1_n88qq"]
+[ext_resource type="Texture2D" uid="uid://gijbb2iyakyd" path="res://assets/Drawables/Environment/background2.png" id="2_q3nw4"]
+[ext_resource type="Texture2D" uid="uid://d23nla0iy2h1d" path="res://assets/Drawables/Environment/background3.png" id="3_6cyp2"]
+[ext_resource type="Texture2D" uid="uid://qhohgli0peft" path="res://assets/Drawables/Environment/background4a.png" id="4_is77y"]
+[ext_resource type="Texture2D" uid="uid://8siq70p6t7pq" path="res://assets/Drawables/Menu/pausebutton.png" id="6_ck6ua"]
+[ext_resource type="Script" path="res://assets/Scripts/Camera2D.gd" id="6_cy2pw"]
+[ext_resource type="Texture2D" uid="uid://coo65j4nwck0j" path="res://assets/Drawables/Menu/settings_50x50.png" id="7_wb1pj"]
+[ext_resource type="Texture2D" uid="uid://bjdeq0gflbfj8" path="res://assets/Drawables/Menu/exit_50x50.png" id="8_j6gl5"]
+[ext_resource type="Script" path="res://assets/Scripts/Pause.gd" id="9_uwrxu"]
+[ext_resource type="PackedScene" uid="uid://ckp03od6i0x1b" path="res://assets/Scenes/playerforboss.tscn" id="10_1v6uh"]
+[ext_resource type="PackedScene" uid="uid://dkhlaj2ieqj6h" path="res://assets/Scenes/golem_boss.tscn" id="11_0pch2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xvp8"]
+size = Vector2(964, 18.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl4bj"]
+size = Vector2(20, 481.125)
+
+[node name="BossRoom" type="Node2D"]
+position = Vector2(-2, -3)
+
+[node name="GolemBoss" parent="." instance=ExtResource("11_0pch2")]
+position = Vector2(635, 364)
+
+[node name="player" parent="." instance=ExtResource("10_1v6uh")]
+position = Vector2(26, 446)
+
+[node name="Background" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(263, -94)
+
+[node name="Layer1" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(960, 480)
+
+[node name="background1" type="Sprite2D" parent="Background/Layer1"]
+texture = ExtResource("1_n88qq")
+centered = false
+
+[node name="Layer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(960, 480)
+
+[node name="background2" type="Sprite2D" parent="Background/Layer2"]
+texture = ExtResource("2_q3nw4")
+centered = false
+
+[node name="Layer3" type="ParallaxLayer" parent="Background"]
+position = Vector2(1, 0)
+motion_scale = Vector2(0.85, 0.85)
+motion_mirroring = Vector2(960, 480)
+
+[node name="background3" type="Sprite2D" parent="Background/Layer3"]
+texture = ExtResource("3_6cyp2")
+centered = false
+
+[node name="Layer4" type="ParallaxLayer" parent="Background"]
+position = Vector2(2, -1)
+motion_mirroring = Vector2(960, 480)
+
+[node name="background4a" type="Sprite2D" parent="Background/Layer4"]
+texture = ExtResource("4_is77y")
+centered = false
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(485, 482.75)
+shape = SubResource("RectangleShape2D_2xvp8")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-19, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(11, 239.563)
+shape = SubResource("RectangleShape2D_rl4bj")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(960, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(11, 239.563)
+shape = SubResource("RectangleShape2D_rl4bj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(486, 247)
+script = ExtResource("6_cy2pw")
+
+[node name="Pause" type="MenuButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 848.0
+offset_top = 4.0
+offset_right = 948.0
+offset_bottom = 104.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("6_ck6ua")
+icon_alignment = 1
+expand_icon = true
+item_count = 2
+popup/item_0/text = "Settings"
+popup/item_0/icon = ExtResource("7_wb1pj")
+popup/item_0/id = 0
+popup/item_1/text = "Back"
+popup/item_1/icon = ExtResource("8_j6gl5")
+popup/item_1/id = 1
+script = ExtResource("9_uwrxu")
