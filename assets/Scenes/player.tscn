@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6pbbd1txrkj4"]
+[gd_scene load_steps=5 format=3 uid="uid://c6pbbd1txrkj4"]
 
 [ext_resource type="Script" path="res://assets/Scripts/PlayerControl.gd" id="1_xv2vj"]
 [ext_resource type="SpriteFrames" uid="uid://b3jphp1ryqpdw" path="res://assets/Animations/player_idle.tres" id="2_762h8"]
-[ext_resource type="Texture2D" uid="uid://8siq70p6t7pq" path="res://assets/Drawables/Menu/pausebutton.png" id="4_akbie"]
-[ext_resource type="Texture2D" uid="uid://coo65j4nwck0j" path="res://assets/Drawables/Menu/settings_50x50.png" id="5_85d1c"]
-[ext_resource type="Texture2D" uid="uid://bjdeq0gflbfj8" path="res://assets/Drawables/Menu/exit_50x50.png" id="6_mn41k"]
-[ext_resource type="Script" path="res://assets/Scripts/Pause.gd" id="7_sm3k8"]
+[ext_resource type="PackedScene" uid="uid://d36cgmgl0c3wm" path="res://assets/ui/overlay.tscn" id="3_f27r8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dyh7b"]
 radius = 9.0
@@ -15,6 +12,15 @@ height = 38.0
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 script = ExtResource("1_xv2vj")
+
+[node name="Overlay" parent="PlayerBody" instance=ExtResource("3_f27r8")]
+anchors_preset = 9
+anchor_right = 0.0
+offset_left = -480.0
+offset_top = -240.0
+offset_right = 480.0
+offset_bottom = 240.0
+grow_horizontal = 1
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="PlayerBody"]
 position = Vector2(5, -21)
@@ -26,23 +32,3 @@ autoplay = "default"
 shape = SubResource("CapsuleShape2D_dyh7b")
 
 [node name="PlayerCam" type="Camera2D" parent="PlayerBody"]
-
-[node name="Pause" type="MenuButton" parent="PlayerBody/PlayerCam"]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 380.0
-offset_top = -240.0
-offset_right = 480.0
-offset_bottom = -140.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-icon = ExtResource("4_akbie")
-icon_alignment = 1
-expand_icon = true
-item_count = 2
-popup/item_0/text = "Settings"
-popup/item_0/icon = ExtResource("5_85d1c")
-popup/item_0/id = 0
-popup/item_1/text = "Back"
-popup/item_1/icon = ExtResource("6_mn41k")
-popup/item_1/id = 1
-script = ExtResource("7_sm3k8")

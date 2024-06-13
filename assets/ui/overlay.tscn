@@ -38,9 +38,6 @@ ratio = 2.0
 alignment_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer"]
-layout_mode = 2
-
 [node name="Pause" type="MenuButton" parent="AspectRatioContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
