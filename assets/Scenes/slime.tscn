@@ -551,13 +551,17 @@ position = Vector2(7, -5)
 sprite_frames = SubResource("SpriteFrames_ts4ks")
 animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.653509
+frame_progress = 0.914637
+flip_h = true
 
 [node name="AttackBox" type="Area2D" parent="SlimeBody"]
 position = Vector2(7, -5)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SlimeBody/AttackBox"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SlimeBody/AttackBox"]
 polygon = PackedVector2Array(-10, 10, -4, -5, 14, -10, 23, -1, 16, 8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SlimeBody/AttackBox"]
+polygon = PackedVector2Array(12, 10, 0, -5, -7, -8, -18, -2, -21, 5, -15, 9)
 
 [node name="Area2D" type="Area2D" parent="SlimeBody"]
 
