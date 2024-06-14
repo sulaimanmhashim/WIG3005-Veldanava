@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b507qt7cerpum"]
+[gd_scene load_steps=3 format=3 uid="uid://b507qt7cerpum"]
 
 [ext_resource type="Texture2D" uid="uid://csb0v4lk7bgs4" path="res://assets/Characters/monsters.png" id="1_tgka5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7cux"]
+radius = 8.0
+height = 22.0
 
 [node name="Base_Enemy_Entity" type="CharacterBody2D"]
 
@@ -15,6 +19,8 @@ vframes = 10
 root_node = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_l7cux")
 
 [node name="Wall_Checks" type="Node2D" parent="."]
 

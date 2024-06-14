@@ -548,3 +548,30 @@ position = Vector2(7, -5)
 sprite_frames = SubResource("SpriteFrames_ts4ks")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Wall_Checks" type="Node2D" parent="SlimeBody"]
+
+[node name="Wall_RayCast_Left" type="RayCast2D" parent="SlimeBody/Wall_Checks"]
+rotation = 1.56913
+target_position = Vector2(-0.0399103, 24)
+
+[node name="Wall_RayCast_Right" type="RayCast2D" parent="SlimeBody/Wall_Checks"]
+rotation = 1.56913
+target_position = Vector2(0.044899, -27)
+
+[node name="Floor_Checks" type="Node2D" parent="SlimeBody"]
+
+[node name="Floor_RayCast_Left" type="RayCast2D" parent="SlimeBody/Floor_Checks"]
+position = Vector2(-9, 0)
+target_position = Vector2(0, 18)
+
+[node name="Floor_RayCast_Right" type="RayCast2D" parent="SlimeBody/Floor_Checks"]
+position = Vector2(10, 0)
+target_position = Vector2(0, 18)
+
+[node name="Player_Tracker_Pivot" type="Node2D" parent="SlimeBody"]
+
+[node name="Player_Tracker_Raycast" type="RayCast2D" parent="SlimeBody/Player_Tracker_Pivot" groups=["player"]]
+rotation = -1.57885
+
+[node name="Chase_Timer" type="Timer" parent="SlimeBody"]

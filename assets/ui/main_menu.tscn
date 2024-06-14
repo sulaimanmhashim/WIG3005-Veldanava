@@ -33,13 +33,6 @@ size_flags_vertical = 4
 text = "Play"
 icon_alignment = 1
 
-[node name="Option" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Option"
-
 [node name="About" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 25)
 layout_mode = 2

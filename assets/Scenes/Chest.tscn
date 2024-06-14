@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvu3ypu1xnpg1"]
+
+[ext_resource type="Texture2D" uid="uid://du87hprck6dkq" path="res://assets/Drawables/Environment/Chest 1.png" id="1_8dg6n"]
+[ext_resource type="Texture2D" uid="uid://dkcpqjnmdqpn0" path="res://assets/Drawables/Environment/Chest 2.png" id="2_mprbn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoilk"]
+atlas = ExtResource("1_8dg6n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hmw7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoilk")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mprbn")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc3tq"]
+size = Vector2(16, 16)
+
+[node name="Chest" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2hmw7")
+animation = &"close"
+frame_progress = 0.669008
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_cc3tq")
