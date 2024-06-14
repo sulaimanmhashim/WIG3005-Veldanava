@@ -30,12 +30,17 @@ var attack_timer = 0.0
 var is_dashing = false
 var dash_timer = 0.0
 
+################################
+# Stat
+var HP = 100
+var Atk = 10
+
+
 func _ready():
 	playerAnim = $PlayerAnim
 	playerAnim.play("default")
 
 func _physics_process(delta):
-	
 	var direction = Input.get_axis("ui_left","ui_right")
 		
 	if not in_action:
@@ -78,8 +83,6 @@ func _physics_process(delta):
 			is_rolling = false
 			in_action = false
 			playerAnim.play("default")
-			
-
 		if facing_right:
 			velocity.x = 1 * ROLL_SPEED
 		else:
@@ -113,7 +116,6 @@ func _physics_process(delta):
 	else:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		
 		if direction:
 			if is_on_floor():
 				playerAnim.play("run")
@@ -134,3 +136,8 @@ func _physics_process(delta):
 			playerAnim.play("jump")
 
 	move_and_slide()
+
+func doDamage(dmg):
+	print("before", HP)
+	HP-=dmg
+	print(HP)

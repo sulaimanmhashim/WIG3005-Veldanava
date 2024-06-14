@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://uisio1qjlcs"]
+[gd_scene load_steps=81 format=3 uid="uid://uisio1qjlcs"]
 
 [ext_resource type="Texture2D" uid="uid://b3n5qouyuek5n" path="res://assets/Drawables/Enemies/Slimes/slime_swallow.png" id="1_e10g8"]
 [ext_resource type="Script" path="res://assets/Scripts/SlimeBody.gd" id="1_lu4df"]
@@ -331,7 +331,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bubg1")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -534,6 +534,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6v2pl"]
+radius = 93.0
+
 [node name="Slime" type="Node2D"]
 
 [node name="SlimeBody" type="CharacterBody2D" parent="."]
@@ -546,32 +549,21 @@ shape = SubResource("CapsuleShape2D_pphcg")
 [node name="SlimeAnim" type="AnimatedSprite2D" parent="SlimeBody"]
 position = Vector2(7, -5)
 sprite_frames = SubResource("SpriteFrames_ts4ks")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+frame_progress = 0.653509
 
-[node name="Wall_Checks" type="Node2D" parent="SlimeBody"]
+[node name="AttackBox" type="Area2D" parent="SlimeBody"]
+position = Vector2(7, -5)
 
-[node name="Wall_RayCast_Left" type="RayCast2D" parent="SlimeBody/Wall_Checks"]
-rotation = 1.56913
-target_position = Vector2(-0.0399103, 24)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SlimeBody/AttackBox"]
+polygon = PackedVector2Array(-10, 10, -4, -5, 14, -10, 23, -1, 16, 8)
 
-[node name="Wall_RayCast_Right" type="RayCast2D" parent="SlimeBody/Wall_Checks"]
-rotation = 1.56913
-target_position = Vector2(0.044899, -27)
+[node name="Area2D" type="Area2D" parent="SlimeBody"]
 
-[node name="Floor_Checks" type="Node2D" parent="SlimeBody"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeBody/Area2D"]
+shape = SubResource("CircleShape2D_6v2pl")
 
-[node name="Floor_RayCast_Left" type="RayCast2D" parent="SlimeBody/Floor_Checks"]
-position = Vector2(-9, 0)
-target_position = Vector2(0, 18)
-
-[node name="Floor_RayCast_Right" type="RayCast2D" parent="SlimeBody/Floor_Checks"]
-position = Vector2(10, 0)
-target_position = Vector2(0, 18)
-
-[node name="Player_Tracker_Pivot" type="Node2D" parent="SlimeBody"]
-
-[node name="Player_Tracker_Raycast" type="RayCast2D" parent="SlimeBody/Player_Tracker_Pivot" groups=["player"]]
-rotation = -1.57885
-
-[node name="Chase_Timer" type="Timer" parent="SlimeBody"]
+[connection signal="body_entered" from="SlimeBody/AttackBox" to="SlimeBody" method="_on_attack_box_body_entered"]
+[connection signal="body_entered" from="SlimeBody/Area2D" to="SlimeBody" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SlimeBody/Area2D" to="SlimeBody" method="_on_area_2d_body_exited"]
