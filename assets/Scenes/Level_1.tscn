@@ -1,11 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://caq3sbmvn322i"]
+[gd_scene load_steps=20 format=3 uid="uid://bp118rqj588a"]
 
 [ext_resource type="Texture2D" uid="uid://7ie274i1s7g6" path="res://assets/Drawables/Environment/background1.png" id="1_hihwq"]
 [ext_resource type="Texture2D" uid="uid://gijbb2iyakyd" path="res://assets/Drawables/Environment/background2.png" id="2_trefa"]
 [ext_resource type="Texture2D" uid="uid://d23nla0iy2h1d" path="res://assets/Drawables/Environment/background3.png" id="3_np85t"]
 [ext_resource type="Texture2D" uid="uid://jwbclwpadpw0" path="res://assets/Drawables/Environment/background4b.png" id="4_7dcjg"]
 [ext_resource type="TileSet" uid="uid://bbiiwn4wpapdf" path="res://assets/Animations/cave_level.tres" id="5_pqabt"]
-[ext_resource type="PackedScene" uid="uid://cvu3ypu1xnpg1" path="res://assets/Scenes/Chest.tscn" id="6_qex2k"]
+[ext_resource type="PackedScene" path="res://assets/Scenes/Chest.tscn" id="6_qex2k"]
 [ext_resource type="PackedScene" uid="uid://c6pbbd1txrkj4" path="res://assets/Scenes/player.tscn" id="6_wp1yi"]
 [ext_resource type="Script" path="res://assets/Scripts/Area2D.gd" id="8_3fsjx"]
 [ext_resource type="Texture2D" uid="uid://cm1syvbgwocbw" path="res://assets/Drawables/Environment/portal3_spritesheet.png" id="9_wh54v"]

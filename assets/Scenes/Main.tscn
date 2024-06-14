@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://jwbclwpadpw0" path="res://assets/Drawables/Environment/background4b.png" id="4_fxe4b"]
 [ext_resource type="Texture2D" uid="uid://cm1syvbgwocbw" path="res://assets/Drawables/Environment/portal3_spritesheet.png" id="4_ukvpp"]
 [ext_resource type="TileSet" uid="uid://bbiiwn4wpapdf" path="res://assets/Animations/cave_level.tres" id="5_7i560"]
-[ext_resource type="PackedScene" uid="uid://cvu3ypu1xnpg1" path="res://assets/Scenes/Chest.tscn" id="6_reijm"]
+[ext_resource type="PackedScene" path="res://assets/Scenes/Chest.tscn" id="6_reijm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fl7j4"]
 atlas = ExtResource("4_ukvpp")
@@ -96,25 +96,30 @@ layer_0/tile_data = PackedInt32Array(1835068, 131072, 2, 1835069, 196608, 2, 170
 [node name="Chest" parent="." instance=ExtResource("6_reijm")]
 position = Vector2(733, -24)
 
-[node name="Player" parent="." instance=ExtResource("2_fl5my")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_fl5my")]
 position = Vector2(0, 60)
 
 [node name="Slime" parent="." instance=ExtResource("3_0ljsj")]
 position = Vector2(430, 6)
 
 [node name="Slime2" parent="." instance=ExtResource("3_0ljsj")]
+visible = false
 position = Vector2(519, 423)
 
 [node name="Slime3" parent="." instance=ExtResource("3_0ljsj")]
+visible = false
 position = Vector2(460, 421)
 
 [node name="Slime4" parent="." instance=ExtResource("3_0ljsj")]
+visible = false
 position = Vector2(379, 422)
 
 [node name="Slime5" parent="." instance=ExtResource("3_0ljsj")]
+visible = false
 position = Vector2(571, 420)
 
 [node name="Slime6" parent="." instance=ExtResource("3_0ljsj")]
+visible = false
 position = Vector2(410, 420)
 
 [node name="Area2D" type="Area2D" parent="."]

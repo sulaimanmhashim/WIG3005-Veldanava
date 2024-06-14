@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6pbbd1txrkj4"]
+[gd_scene load_steps=6 format=3 uid="uid://c6pbbd1txrkj4"]
 
 [ext_resource type="Script" path="res://assets/Scripts/PlayerControl.gd" id="1_xv2vj"]
 [ext_resource type="SpriteFrames" uid="uid://b3jphp1ryqpdw" path="res://assets/Animations/player_idle.tres" id="2_762h8"]
@@ -8,9 +8,11 @@
 radius = 9.0
 height = 38.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iy614"]
+
 [node name="Player" type="Node2D"]
 
-[node name="PlayerBody" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_xv2vj")
 
 [node name="Overlay" parent="PlayerBody" instance=ExtResource("3_f27r8")]
@@ -32,3 +34,12 @@ autoplay = "default"
 shape = SubResource("CapsuleShape2D_dyh7b")
 
 [node name="PlayerCam" type="Camera2D" parent="PlayerBody"]
+
+[node name="Area2D" type="Area2D" parent="PlayerBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody/Area2D"]
+position = Vector2(19, -1)
+shape = SubResource("RectangleShape2D_iy614")
+disabled = true
+
+[connection signal="body_entered" from="PlayerBody/Area2D" to="PlayerBody" method="_on_area_2d_body_entered"]

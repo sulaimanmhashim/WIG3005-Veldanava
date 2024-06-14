@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://uisio1qjlcs"]
+[gd_scene load_steps=81 format=3 uid="uid://uisio1qjlcs"]
 
 [ext_resource type="Texture2D" uid="uid://b3n5qouyuek5n" path="res://assets/Drawables/Enemies/Slimes/slime_swallow.png" id="1_e10g8"]
 [ext_resource type="Script" path="res://assets/Scripts/SlimeBody.gd" id="1_lu4df"]
@@ -534,6 +534,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkje"]
+
 [node name="Slime" type="Node2D"]
 
 [node name="SlimeBody" type="CharacterBody2D" parent="."]
@@ -546,7 +548,7 @@ shape = SubResource("CapsuleShape2D_pphcg")
 [node name="SlimeAnim" type="AnimatedSprite2D" parent="SlimeBody"]
 position = Vector2(7, -5)
 sprite_frames = SubResource("SpriteFrames_ts4ks")
-animation = &"idle"
+animation = &"defeated"
 autoplay = "idle"
 
 [node name="Wall_Checks" type="Node2D" parent="SlimeBody"]
@@ -575,3 +577,10 @@ target_position = Vector2(0, 18)
 rotation = -1.57885
 
 [node name="Chase_Timer" type="Timer" parent="SlimeBody"]
+
+[node name="Area2D" type="Area2D" parent="SlimeBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeBody/Area2D" groups=["Hit"]]
+shape = SubResource("RectangleShape2D_gjkje")
+
+[connection signal="body_entered" from="SlimeBody/Area2D" to="SlimeBody" method="_on_area_2d_body_entered"]
