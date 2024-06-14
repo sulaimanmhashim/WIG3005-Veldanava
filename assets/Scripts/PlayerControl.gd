@@ -37,10 +37,12 @@ var Atk = 10
 
 
 func _ready():
+	$Area2D.visible = false
 	playerAnim = $PlayerAnim
 	playerAnim.play("default")
 
 func _physics_process(delta):
+	
 	var direction = Input.get_axis("ui_left","ui_right")
 		
 	if not in_action:
@@ -66,6 +68,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("attack"):
 			in_action = true
 			is_attacking = true
+			$Area2D.visible = true
 			attack_timer = ATTACK_DURATION
 			playerAnim.play("attack")
 			
@@ -73,6 +76,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("dash_attack"):
 			in_action = true
 			is_dashing = true
+			$Area2D.visible = true
 			dash_timer = DASH_DURATION
 			playerAnim.play("attack2")
 	
@@ -93,6 +97,7 @@ func _physics_process(delta):
 		if attack_timer <= 0:
 			is_attacking = false
 			in_action = false
+			$Area2D.visible = false
 			playerAnim.play("default")
 		
 		if not is_on_floor():
@@ -141,3 +146,9 @@ func doDamage(dmg):
 	print("before", HP)
 	HP-=dmg
 	print(HP)
+
+
+func _on_area_2d_body_entered(body):
+	print(body.get_name())
+	if body.get_name().contains("GolemBoss"):
+		body.take_damage()

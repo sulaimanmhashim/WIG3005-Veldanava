@@ -14,6 +14,10 @@
 [ext_resource type="Script" path="res://assets/Scripts/ArmorBuff.gd" id="11_dx4ej"]
 [ext_resource type="Script" path="res://assets/Scripts/Death.gd" id="13_5i0wd"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpnhf"]
+radius = 15.0
+height = 44.0
+
 [sub_resource type="Animation" id="Animation_t5pga"]
 length = 0.001
 tracks/0/type = "value"
@@ -361,17 +365,15 @@ _data = {
 "ranged_attack": SubResource("Animation_47axf")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpnhf"]
-radius = 15.0
-height = 44.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ieqey"]
 radius = 100.0
 
 [node name="GolemBoss" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 0
 script = ExtResource("1_u03wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3)
+shape = SubResource("CapsuleShape2D_bpnhf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
@@ -441,10 +443,6 @@ theme_override_font_sizes/font_size = 8
 text = "debug"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -3)
-shape = SubResource("CapsuleShape2D_bpnhf")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 0

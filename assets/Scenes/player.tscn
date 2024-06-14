@@ -27,8 +27,17 @@ position = Vector2(5, -21)
 sprite_frames = ExtResource("2_762h8")
 animation = &"attack2"
 autoplay = "default"
+frame = 5
+frame_progress = 1.0
 
 [node name="PlayerCapsule" type="CollisionShape2D" parent="PlayerBody"]
 shape = SubResource("CapsuleShape2D_dyh7b")
 
 [node name="PlayerCam" type="Camera2D" parent="PlayerBody"]
+
+[node name="Area2D" type="Area2D" parent="PlayerBody"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerBody/Area2D"]
+polygon = PackedVector2Array(4, -22, 40, -15, 50, -1, 39, 14, -20, 15)
+
+[connection signal="body_entered" from="PlayerBody/Area2D" to="PlayerBody" method="_on_area_2d_body_entered"]

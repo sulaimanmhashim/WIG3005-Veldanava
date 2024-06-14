@@ -35,4 +35,6 @@ func _physics_process(delta):
 	move_and_collide(velocity * delta)
 
 func take_damage():
+	print("before",health)
 	health -= 10 - DEF
+	print("after",health)
